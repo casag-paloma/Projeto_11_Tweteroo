@@ -4,7 +4,6 @@ import cors from "cors";
 const server = express();
 server.use(cors());
 server.use(express.json());
-console.log('tá funcionando');
 const users = [];
 const tweets = [];
 
