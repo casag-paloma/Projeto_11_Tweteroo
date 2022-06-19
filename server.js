@@ -20,7 +20,7 @@ server.post('/tweets', (request, response) => {
 
 server.get('/tweets', (request, response) => {
     const lastTweets = tweets.slice(-10)
-    response.send(lastTweets)
+    response.send(lastTweets.reverse())
 })
 
 server.listen(5000);
