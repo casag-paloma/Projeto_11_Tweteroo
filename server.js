@@ -6,14 +6,20 @@ server.use(cors());
 server.use(express.json());
 const users = [];
 const tweets = [];
+let avatar = '';
 
 server.post('/sign-up', (request, response) => {
     users.push(request.body)
+    avatar = request.body.avatar
     response.send('OK')
 })
 
 server.post('/tweets', (request, response) => {
-    tweets.push(request.body)
+    tweets.push({
+      username: request.body.username,
+	  avatar: avatar,
+	  tweet: request.body.tweet
+    })
     response.send('OK')
 })
 
